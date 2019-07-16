@@ -9,6 +9,7 @@ import { CockpitComponent } from './cockpit/cockpit.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { HighlightDirective } from './shared/highlight.directive';
 import { BetterHighlightDirective } from './shared/better-highlight.directive';
+import { UnlessDirective } from './shared/unless.directive';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { BetterHighlightDirective } from './shared/better-highlight.directive';
     DirectivesComponent,
 
     HighlightDirective,
-    BetterHighlightDirective
+    BetterHighlightDirective,
+    UnlessDirective
   ],
   imports: [
     BrowserModule,
