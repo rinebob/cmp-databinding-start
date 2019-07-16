@@ -6,12 +6,19 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ServerElementComponent } from './server-element/server-element.component';
 import { CockpitComponent } from './cockpit/cockpit.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { HighlightDirective } from './shared/highlight.directive';
+import { BetterHighlightDirective } from './shared/better-highlight.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
     ServerElementComponent,
-    CockpitComponent
+    CockpitComponent,
+    DirectivesComponent,
+
+    HighlightDirective,
+    BetterHighlightDirective
   ],
   imports: [
     BrowserModule,

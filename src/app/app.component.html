@@ -14,8 +14,15 @@
 			<strong *ngIf="serverElement.type === 'server'" style="color: red">{{ serverElement.content }}</strong>
 			<em *ngIf="serverElement.type === 'blueprint'">{{ serverElement.content }}</em>
 			</p>
-			
+
 			</app-server-element>
 		</div>
-	</div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+        <hr>
+        <h2>Directives</h2>
+      <app-directives></app-directives>
+    </div>
+  </div>
 </div>
