@@ -1,0 +1,57 @@
+div {
+	border: 1px solid black;
+	/* color: white; */
+}
+.container {
+	
+    /* display: flex; */
+	/* height: 200px; */
+	/* height: 100vh; */
+	/* width: 90vw; */
+    /* margin: 20px;
+	padding: 20px; */
+}
+
+.header {
+	height: 100px;
+	background-color: darkslategray;
+}
+
+.main {
+	height: 80vh;
+	/* height: 100%; */
+}
+
+.leftside {
+	display: flex;
+}
+
+.footer {
+	height: 15em;
+}
+
+.side-menu {
+
+	list-style-type: none;
+	background-color: blueviolet;
+	color: wheat;
+	
+}
+.side-menu-item {
+	height: 4em;
+	border: 1px solid black;
+	border-radius: 5px;
+	text-align: center;
+	padding: 10px;
+	
+
+}
+
+.side-info {
+	background-color: turquoise ;
+	/* height: 100%; */
+}
+
+.body--bottom {
+	height: 20%
+}
