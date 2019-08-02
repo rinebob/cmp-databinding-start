@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AccountsService } from './accounts.service';
 import { LoggingService } from './logging.service';
+// import { CounterService } from './counter.service';
 
 
 import { AppComponent } from './app.component';
@@ -28,6 +29,7 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
     BrowserModule,
     FormsModule,
   ],
+  // providers: [AccountsService, LoggingService, CounterService],
   providers: [AccountsService, LoggingService],
   bootstrap: [AppComponent]
 })

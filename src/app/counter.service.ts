@@ -1,6 +1,6 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
-
+@Injectable({providedIn: 'root' })
 export class CounterService {
   count: number = 0;
   activeToInactive: number = 0;
