@@ -12,12 +12,18 @@ import { CounterService } from './counter.service';
   providers: [ActiveUsersService, CounterService]
 })
 export class AppComponent implements OnInit {
-  // SERVICES ASSIGNMENT
+  // ROUTING ASSIGNMENT
+
+
+  ngOnInit() {}
+
+
+    // SERVICES ASSIGNMENT
   // this is starting code and was replaced by assignment code
   // activeUsers = ['Max', 'Anna'];
   // inactiveUsers = ['Chris', 'Manu'];
 
-  ngOnInit() {}
+  // ngOnInit() {}
 
   // onSetToInactive(id: number) {
   //   this.inactiveUsers.push(this.activeUsers[id]);

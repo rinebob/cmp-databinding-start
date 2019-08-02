@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { AccountsService } from './accounts.service';
 import { LoggingService } from './logging.service';
 // import { CounterService } from './counter.service';
+import { ServersService } from './servers/servers.service';
 
 
 import { AppComponent } from './app.component';
@@ -14,6 +15,12 @@ import { AccountComponent } from './account/account.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { ActiveUsersComponent } from './active-users/active-users.component';
 import { InactiveUsersComponent } from './inactive-users/inactive-users.component';
+import { HomeComponent } from './home/home.component';
+import { ServersComponent } from './servers/servers.component';
+import { EditServerComponent } from './servers/edit-server/edit-server.component';
+import { ServerComponent } from './servers/server/server.component';
+import { UsersComponent } from './users/users.component';
+import { UserComponent } from './users/user/user.component';
 
 @NgModule({
   declarations: [
@@ -23,14 +30,20 @@ import { InactiveUsersComponent } from './inactive-users/inactive-users.componen
     AccountComponent,
     NewAccountComponent,
     ActiveUsersComponent,
-    InactiveUsersComponent
+    InactiveUsersComponent,
+    HomeComponent,
+    ServersComponent,
+    EditServerComponent,
+    ServerComponent,
+    UsersComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
   // providers: [AccountsService, LoggingService, CounterService],
-  providers: [AccountsService, LoggingService],
+  providers: [AccountsService, LoggingService, ServersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
