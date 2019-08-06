@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { ServersService } from '../servers.service';
 
@@ -9,11 +10,29 @@ import { ServersService } from '../servers.service';
 })
 export class ServerComponent implements OnInit {
   server: {id: number, name: string, status: string};
-
-  constructor(private serversService: ServersService) { }
+  
+  constructor(private serversService: ServersService,
+  			  private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.server = this.serversService.getServer(1);
+	const id = +this.route.snapshot.params['id'];
+	this.server = this.serversService.getServer(id);
+	this.route.params
+		.subscribe(
+			(params: Params) => {
+				this.serversService.getServer(+params['id']);
+			}
+		);
   }
 
 }
+
+
+	
+
+
+// import ActivatedRoute and inject it into the constructor 
+// pull route params using route.snapshot property
+// let id = this.route.snapshot.params['id'];
+
+// make sure the route exists in app.module 

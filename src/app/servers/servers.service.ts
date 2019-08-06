@@ -20,7 +20,9 @@ export class ServersService {
   getServers() {
     return this.servers;
   }
-
+	// console.log('servers.s.ts.  id: ',1);
+	//   console.log('servers.s.ts.  server: ',server);
+	
   getServer(id: number) {
     const server = this.servers.find(
       (s) => {

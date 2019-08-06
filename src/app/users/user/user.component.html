@@ -1,2 +1,6 @@
-<p>User with ID _ID_ loaded.</p>
-<p>User name is _NAME_</p>
+<p>Dude - we just loaded the user with ID {{ user.id }}!  Psych!!.</p>
+<p>Yo - this user is named {{ user.name }}.  Awesome!!!</p>
+<hr>
+<a [routerLink]="['/users', 45, 'Dweezil']">Go to /users/45/Dweezil</a>
+<hr>
+<a [routerLink]="['/users', 33, 'rinebob']">Go to /users/33/rinebob</a>
