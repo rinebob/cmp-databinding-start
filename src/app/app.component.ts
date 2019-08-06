@@ -11,6 +11,7 @@ import { CounterService } from './counter.service';
   styleUrls: ['./app.component.css'],
   providers: [ActiveUsersService, CounterService]
 })
+
 export class AppComponent implements OnInit {
   // ROUTING ASSIGNMENT
 
@@ -65,5 +66,6 @@ export class AppComponent implements OnInit {
     // ngOnInit() {
     //   this.accounts = this.accountsService.accounts;
     // }
+
 
 }
