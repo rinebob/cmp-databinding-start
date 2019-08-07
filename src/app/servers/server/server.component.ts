@@ -20,19 +20,9 @@ export class ServerComponent implements OnInit {
 	this.route.params
 		.subscribe(
 			(params: Params) => {
-				this.serversService.getServer(+params['id']);
+				this.server = this.serversService.getServer(+params['id']);
 			}
 		);
   }
 
 }
-
-
-	
-
-
-// import ActivatedRoute and inject it into the constructor 
-// pull route params using route.snapshot property
-// let id = this.route.snapshot.params['id'];
-
-// make sure the route exists in app.module 
