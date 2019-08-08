@@ -1,7 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
+
+
+import { AppRoutingModule } from './app-routing.module';
 
 import { AccountsService } from './accounts.service';
 import { LoggingService } from './logging.service';
@@ -22,28 +25,7 @@ import { EditServerComponent } from './servers/edit-server/edit-server.component
 import { ServerComponent } from './servers/server/server.component';
 import { UsersComponent } from './users/users.component';
 import { UserComponent } from './users/user/user.component';
-
-// const appRoutes: Routes = [
-// 	{ path: '', component: HomeComponent },
-// 	{ path: 'users', component: UsersComponent },
-// 	{ path: 'users/:id/:name', component: UserComponent },
-// 	{ path: 'servers', component: ServersComponent },
-// 	{ path: 'servers/:id', component: ServerComponent },
-// 	{ path: 'servers/:id/edit', component: EditServerComponent },
-// 	// { path: '**', component: HomeComponent },
-// ];
-
-const appRoutes: Routes = [
-	{ path: '', component: HomeComponent },
-	{ path: 'users', component: UsersComponent, children: [
-		{ path: ':id/:name', component: UserComponent },
-	] },
-	{ path: 'servers', component: ServersComponent, children: [
-		{ path: ':id', component: ServerComponent },
-		{ path: ':id/edit', component: EditServerComponent },
-	] },
-	// { path: '**', component: HomeComponent },
-];
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -59,14 +41,16 @@ const appRoutes: Routes = [
     EditServerComponent,
     ServerComponent,
     UsersComponent,
-    UserComponent
+    UserComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule,
+    AppRoutingModule
+
   ],
-  // providers: [AccountsService, LoggingService, CounterService],
   providers: [AccountsService, LoggingService, ServersService],
   bootstrap: [AppComponent]
 })
