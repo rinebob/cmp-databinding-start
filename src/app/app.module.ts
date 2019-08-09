@@ -10,6 +10,9 @@ import { AccountsService } from './accounts.service';
 import { LoggingService } from './logging.service';
 // import { CounterService } from './counter.service';
 import { ServersService } from './servers/servers.service';
+import { AuthGuard } from './auth-guard.service';
+import { AuthService } from './auth.service';
+import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 
 
 import { AppComponent } from './app.component';
@@ -52,7 +55,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule
 
   ],
-  providers: [AccountsService, LoggingService, ServersService],
+  providers: [AccountsService, LoggingService, ServersService, AuthGuard, AuthService, CanDeactivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
