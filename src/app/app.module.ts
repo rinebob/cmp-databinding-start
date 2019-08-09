@@ -29,6 +29,9 @@ import { ServerComponent } from './servers/server/server.component';
 import { UsersComponent } from './users/users.component';
 
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserComponent } from './users/user/user.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+import { ServerResolver } from './servers/server/server-resolver.service';
 
 
 @NgModule({
@@ -46,7 +49,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ServerComponent,
     UsersComponent,
     UserComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule
 
   ],
-  providers: [AccountsService, LoggingService, ServersService, AuthGuard, AuthService, CanDeactivateGuard],
+  providers: [AccountsService, LoggingService, ServersService, AuthGuard, AuthService, CanDeactivateGuard, ServerResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
