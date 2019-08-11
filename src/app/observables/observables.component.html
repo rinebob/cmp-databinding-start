@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <a routerLink="/observables/base">Base</a> |
+      <!-- <a [routerLink]="['user', 1]"> -->
+      <a [routerLink]="['/observables/user', 1]">
+        User 1
+      </a>
+      |
+      <a [routerLink]="['/observables/user', 2]">
+        User 2
+      </a>
+    </div>
+  </div>
+  <hr />
+  <p *ngIf="userActivated">Activated dude!</p>
+  <hr />
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
+

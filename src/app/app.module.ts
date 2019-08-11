@@ -32,6 +32,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { UserComponent } from './users/user/user.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './servers/server/server-resolver.service';
+import { ObservablesComponent } from './observables/observables.component';
+import { PersonComponent } from './observables/person/person.component';
+import { BaseComponent } from './observables/base/base.component';
 
 
 @NgModule({
@@ -50,7 +53,10 @@ import { ServerResolver } from './servers/server/server-resolver.service';
     UsersComponent,
     UserComponent,
     PageNotFoundComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    ObservablesComponent,
+    PersonComponent,
+    BaseComponent,
   ],
   imports: [
     BrowserModule,
