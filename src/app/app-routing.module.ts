@@ -11,10 +11,17 @@ import { AuthGuard } from './auth-guard.service';
 import { CanDeactivateGuard } from './servers/edit-server/can-deactivate-guard.service';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { ServerResolver } from './servers/server/server-resolver.service';
+import { ObservablesComponent } from './observables/observables.component';
+import { PersonComponent } from './observables/person/person.component';
+import { BaseComponent } from './observables/base/base.component';
 
 
 const appRoutes: Routes = [
 	{ path: '', component: HomeComponent, pathMatch: 'full' },
+	{ path: 'observables', component: ObservablesComponent, children: [
+		{path: 'base', component: BaseComponent},
+		{path: 'user/:id', component: PersonComponent},
+	]},
 	{ path: 'users', component: UsersComponent, children: [
 		{ path: ':id/:name', component: UserComponent },
 	] },
