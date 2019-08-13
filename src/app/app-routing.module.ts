@@ -14,6 +14,7 @@ import { ServerResolver } from './servers/server/server-resolver.service';
 import { ObservablesComponent } from './observables/observables.component';
 import { PersonComponent } from './observables/person/person.component';
 import { BaseComponent } from './observables/base/base.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 const appRoutes: Routes = [
@@ -29,6 +30,7 @@ const appRoutes: Routes = [
 		{ path: ':id', component: ServerComponent, resolve: {server: ServerResolver} },
 		{ path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] },
   ] },
+  { path: 'signup', component: SignupComponent },
   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found dude!  Doh!!!'} },
   	{ path: '**', redirectTo: '/not-found' },
 ];
