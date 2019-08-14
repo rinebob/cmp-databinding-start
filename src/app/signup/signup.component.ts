@@ -8,6 +8,7 @@ import { NgForm } from '@angular/forms';
 })
 export class SignupComponent implements OnInit {
   @ViewChild('myForm', {static: false}) signupForm: NgForm;
+  @ViewChild('f', {static: false}) dudeForm: NgForm;
 
   defaultQuestion = 'pet';
   answer = '';
@@ -20,6 +21,14 @@ export class SignupComponent implements OnInit {
     gender: ''
   };
   submitted = false;
+
+  // subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSub = 'advanced';
+  dude = {
+    email: '',
+    password: '',
+    subscription: ''
+  }
 
   constructor() { }
 
@@ -58,6 +67,15 @@ export class SignupComponent implements OnInit {
     this.submitted = true;
     console.log("user: ",this.user);
     this.signupForm.reset();
+  }
+
+  onFormSubmit(){
+    this.dude.email = this.dudeForm.value.email;
+    this.dude.password = this.dudeForm.value.password;
+    this.dude.subscription = this.dudeForm.value.subscription;
+    console.log("dude: ",this.dude);
+    this.submitted = true;
+    this.dudeForm.reset();
   }
 
 }
