@@ -1,6 +1,66 @@
 
+<!-- TEMPLATE-DRIVEN FORMS ASSIGNMENT -->
+<div>
+  <form #f="ngForm" (ngSubmit)="onFormSubmit()">
+    <div class="form-group">
+      <label for="email">Email Address:</label>
+      <input
+      type="text"
+      class="form-control"
+      name="email"
+      ngModel
+      required
+      email
+      #email="ngModel">
+    </div>
+    <span class="help-block" *ngIf="!email.valid  && email.touched">Please enter a valid email address!</span>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input
+      type="text"
+      class="form-control"
+      name="password"
+      ngModel
+      required
+      #password="ngModel">
+    </div>
+    <span class="help-block" *ngIf="!password.valid  && password.touched">Please enter a password!</span>
+    <div class="form-group">
+      <label for="subscription">Subscription Level:</label>
+      <select
+      class="form-control"
+      [ngModel]="defaultSub"
+      name="subscription"
+      required
+      #subscription="ngModel">
+        <option value="basic">Basic</option>
+        <option value="advanced">Advanced</option>
+        <option value="pro">Pro</option>
+    </select>
+    </div>
+    <span class="help-block" *ngIf="!subscription.valid  && subscription.touched">Please select a subscription!</span>
+    <button
+      class="btn btn-primary"
+      type="submit"
+      [disabled]="!f.valid">Submit</button>
+  </form>
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your info dude...</h3>
+      <p>Email: {{ dude.email }}</p>
+      <p>Password: {{ dude.password }}</p>
+      <p>Subscription: {{ dude.subscription }}</p>
+    </div>
+  </div>
+</div>
+
+
+<!-- TEMPLATE-DRIVEN FORMS SECTION CODE -->
+
+<!--
 <div class="col-xs-12 col-sm-10 col-md-8">
-  <form (ngSubmit)="onSubmit(myForm)" #myForm="ngForm">
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
     <div
     id="user-data"
     ngModelGroup="userData"
@@ -8,14 +68,17 @@
       <div class="form-group">
         <label for="username">Username</label>
         <input
-		type="text"
-		id="username"
-		class="form-control"
-		ngModel
-		name="username"
-		required>
+          type="text"
+          id="username"
+          class="form-control"
+          ngModel
+          name="username"
+          required>
       </div>
-      <button class="btn btn-default" type="button">Suggest a Username</button>
+      <button
+      class="btn btn-default"
+      type="button"
+      (click)="suggestUserName()">Suggest a Username</button>
       <div class="form-group">
         <label for="email">Mail</label>
         <input
@@ -66,4 +129,17 @@
 	type="submit"
 	[disabled]="!myForm.valid">Submit</button>
   </form>
+  <hr>
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your info dude...</h3>
+      <p>Username: {{ user.username }}</p>
+      <p>Email: {{ user.email }}</p>
+      <p>Secret question: Your first {{ user.secretQuestion }}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
+    </div>
+  </div>
 </div>
+
+ -->
