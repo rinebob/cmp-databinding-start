@@ -35,6 +35,7 @@ import { ServerResolver } from './servers/server/server-resolver.service';
 import { ObservablesComponent } from './observables/observables.component';
 import { PersonComponent } from './observables/person/person.component';
 import { BaseComponent } from './observables/base/base.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -57,6 +58,7 @@ import { BaseComponent } from './observables/base/base.component';
     ObservablesComponent,
     PersonComponent,
     BaseComponent,
+    SignupComponent,
   ],
   imports: [
     BrowserModule,
