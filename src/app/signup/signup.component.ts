@@ -7,6 +7,8 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent implements OnInit {
+  defaultQuestion = 'dude';
+  answer = '';
 
   constructor() { }
 
