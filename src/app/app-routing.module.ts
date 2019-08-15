@@ -15,6 +15,7 @@ import { ObservablesComponent } from './observables/observables.component';
 import { PersonComponent } from './observables/person/person.component';
 import { BaseComponent } from './observables/base/base.component';
 import { SignupComponent } from './signup/signup.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 const appRoutes: Routes = [
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
 		{ path: ':id/edit', component: EditServerComponent, canDeactivate: [CanDeactivateGuard] },
   ] },
   { path: 'signup', component: SignupComponent },
+  { path: 'reactive', component: ReactiveComponent },
   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found dude!  Doh!!!'} },
   	{ path: '**', redirectTo: '/not-found' },
 ];

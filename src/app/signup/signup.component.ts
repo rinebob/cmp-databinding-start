@@ -22,8 +22,8 @@ export class SignupComponent implements OnInit {
   };
   submitted = false;
 
-  // subscriptions = ['Basic', 'Advanced', 'Pro'];
-  defaultSub = 'advanced';
+  subscriptions = ['Basic', 'Advanced', 'Pro'];
+  defaultSub = this.subscriptions[1];
   dude = {
     email: '',
     password: '',
