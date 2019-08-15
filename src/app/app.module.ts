@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 
@@ -36,6 +37,7 @@ import { ObservablesComponent } from './observables/observables.component';
 import { PersonComponent } from './observables/person/person.component';
 import { BaseComponent } from './observables/base/base.component';
 import { SignupComponent } from './signup/signup.component';
+import { ReactiveComponent } from './reactive/reactive.component';
 
 
 @NgModule({
@@ -59,10 +61,12 @@ import { SignupComponent } from './signup/signup.component';
     PersonComponent,
     BaseComponent,
     SignupComponent,
+    ReactiveComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     RouterModule,
     AppRoutingModule
 
