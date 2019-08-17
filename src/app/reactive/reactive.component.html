@@ -3,6 +3,69 @@
     <!-- <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2"> -->
     <div class="col-xs-12 col-sm-10 col-md-8">
       <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="projectname">Project Name</label>
+            <input
+              type="text"
+              id="projectname"
+              class="form-control"
+              formControlName="projectname">
+              <span
+              class="help-block"
+              *ngIf="!signupForm.get('projectname').valid && signupForm.get('projectname').touched"
+              >
+			  <span
+              class="help-block"
+              *ngIf="signupForm.get('projectname').errors['nameIsForbidden']"
+              >Oh dude - sorry man, that project name is forbidden...</span>
+				<span
+              class="help-block"
+              *ngIf="signupForm.get('projectname').errors['required']"
+              >Yo dude - projectname is required ok??  Geezzz...</span>
+			  </span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              formControlName="email">
+              <span
+              class="help-block"
+              *ngIf="!signupForm.get('email').valid && signupForm.get('email').touched"
+              >Dude wtf??  Can you enter a valid email already???</span>
+          </div>
+        
+        <div class="form-group">
+			<label for="status">Project Status:</label>
+			<select
+			class="form-control"
+			name="status"
+			id="status"
+			formControlName="status"
+			required>
+				<option *ngFor="let status of statuses" [value]="status">{{ status | titlecase }}</option>
+			</select>
+		</div>
+        <span
+        class="help-block"
+        *ngIf="!signupForm.valid && signupForm.touched"
+        >Ok this is lame.  Enter valid data dude!!</span>
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- 
+FULL HTML FROM LECTURES:
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8">
+      <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
         <div formGroupName="userData">
           <div class="form-group">
             <label for="username">Username</label>
@@ -14,7 +77,16 @@
               <span
               class="help-block"
               *ngIf="!signupForm.get('userData.username').valid && signupForm.get('userData.username').touched"
-              >Please enter a valid username dude!</span>
+              >
+			  <span
+              class="help-block"
+              *ngIf="signupForm.get('userData.username').errors['nameIsForbidden']"
+              >Oh dude - sorry man, that username is forbidden...</span>
+				<span
+              class="help-block"
+              *ngIf="signupForm.get('userData.username').errors['required']"
+              >Yo dude - username is required ok??  Geezzz...</span>
+			  </span>
           </div>
           <div class="form-group">
             <label for="email">email</label>
@@ -52,4 +124,5 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->
+
